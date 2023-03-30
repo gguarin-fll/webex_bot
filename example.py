@@ -1,5 +1,6 @@
 import os
 
+from webex_bot.commands.commands import *
 from webex_bot.commands.echo import EchoCommand
 from webex_bot.webex_bot import WebexBot
 
