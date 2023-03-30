@@ -20,7 +20,7 @@ class AssignCommand(Command):
         super().__init__(command_keyword='!assign',
                          help_message='')
 
-    def execute(self):
+    def execute(self, message, attachment_actions, activity):
         for team_member in team_members:
             if team_statuses[team_member]:
                 team_statuses[team_member] = False
@@ -33,7 +33,7 @@ class ReturnCommand(Command):
         super().__init__(comand_keyword='!return',
                          help_message='Return who was recently unavalible')
 
-    def execute(self, team_member):
+    def execute(self, team_member, attachment_actions, activity):
         if team_member in team_statuses:
             team_statuses[team_member] = True
             return f"\n{team_member} is now marked as available.\n"
@@ -45,7 +45,7 @@ class SkipCommand(Command):
         super().__init__(command_keyword='!skip',
                          help_message='Skips who is up next')
 
-    def execute(self):
+    def execute(self, message, attachment_actions, activity):
         team_member = team_members.pop(0)
         team_statuses[team_member] = False
         team_members.append(team_member)
@@ -56,7 +56,7 @@ class FloaterCommand(Command):
         super().__init__(command_keyword="!floaters",
                          help_message="display floaters")
 
-    def execute(self):
+    def execute(self, message, attachment_actions, activity):
         retString = [
         quote_warning(f"## Up next: {list(team_members.items())[0]}"),
         quote_info(f"\n## Rest of the team members: {list(team_members.items())[1:]}")
