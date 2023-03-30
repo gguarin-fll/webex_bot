@@ -4,7 +4,6 @@ import time
 
 from webex_bot.formatting import quote_info, quote_warning
 from webex_bot.models.command import Command
-from webex_bot.models import Response
 
 log = logging.getLogger(__name__)
 team_members = []
