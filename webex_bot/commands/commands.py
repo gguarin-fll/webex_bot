@@ -30,7 +30,7 @@ class AssignCommand(Command):
 
 class ReturnCommand(Command):
     def __init__(self):
-        super().__init__(comand_keyword='!return',
+        super().__init__(command_keyword='!return',
                          help_message='Return who was recently unavalible')
 
     def execute(self, team_member, attachment_actions, activity):
