@@ -26,7 +26,7 @@ class AssignCommand(Command):
                 team_statuses[team_member] = False
                 team_members.remove(team_member)
                 team_members.append(team_member)
-                return f"\nCase assigned to {team_member}!\n"
+                return f"\nCase assigned to {team_member} \n"
 
 class ReturnCommand(Command):
     def __init__(self):
@@ -61,7 +61,7 @@ class FloaterCommand(Command):
         "## Up next:",
         quote_warning(team_members[0]),
         "## Rest of the team members: ",
-        quote_info(team_members[1:])
+        quote_info("".join(team_members[1:]))
         ]
         
         return retString
