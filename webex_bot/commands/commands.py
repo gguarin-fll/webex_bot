@@ -58,8 +58,8 @@ class FloaterCommand(Command):
 
     def execute(self, message, attachment_actions, activity):
         retString = [
-        quote_warning(f"## Up next: {list(team_members.items())[0]}"),
-        quote_info(f"\n## Rest of the team members: {list(team_members.items())[1:]}")
+        quote_warning(f"## Up next: {team_members[0]}"),
+        quote_info(f"\n## Rest of the team members: {team_members[1:]}")
         ]
         
         return retString
