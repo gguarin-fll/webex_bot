@@ -57,10 +57,11 @@ class FloaterCommand(Command):
         super().__init__(command_keyword="!floaters",
                          help_message="display floaters")
 
-    def execute(self, message, attachment_actions, activity):
+    def execute(self):
         retString = [
-        quote_warning(f"## Up next: {team_members[0]}"),
-        quote_info(f"\n## Rest of the team members: {team_members[1:]}")
-        ]
-        
-        return Response(markdown=retString)
+            "## Up next:",
+            quote_warning(list(team_members.items())[0]),
+            "## Rest of the team members: ",
+            quote_info(list(team_members.items())[1:])
+            ]
+        return retString
