@@ -13,6 +13,10 @@ bot = WebexBot(teams_bot_token="MjhhZjM3YzYtMjFmYS00NTFjLTlkODEtODg2NjVjZDFiNDgw
 # Add new commands for the bot to listen out for.
 bot.add_command(EchoCommand())
 bot.add_command(FloaterCommand())
+bot.add_command(AssignCommand())
+bot.add_command(ReturnCommand())
+bot.add_command(SkipCommand())
+
 
 # Call `run` for the bot to wait for incoming messages.
 bot.run()
