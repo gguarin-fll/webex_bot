@@ -61,7 +61,7 @@ class FloaterCommand(Command):
         "## Up next:",
         quote_warning(team_members[0]),
         "## Rest of the team members: ",
-        quote_info("".join(team_members[1:]))
+        quote_info("\n".join(team_members[1:]))
         ]
         
         return retString
