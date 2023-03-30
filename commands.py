@@ -13,7 +13,7 @@ with open('team_members.txt') as file:
   for member in file:
     team_members.append(member)
     team_statuses[member] = True
-  team_members.shuffle()
+  random.shuffle(team_members)
 
 class AssignCommand(Command):
   def __init__(self, api_key):
