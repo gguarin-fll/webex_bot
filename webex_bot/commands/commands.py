@@ -16,7 +16,7 @@ with open('team_members.txt') as file:
     random.shuffle(team_members)
 
 class AssignCommand(Command):
-    def __init__(self, api_key):
+    def __init__(self):
         super().__init__(command_keyword='!assign',
                          help_message='')
 
@@ -29,7 +29,7 @@ class AssignCommand(Command):
                 return f"\nCase assigned to {team_member}!\n"
 
 class ReturnCommand(Command):
-    def __init__(self, api_key):
+    def __init__(self):
         super().__init__(comand_keyword='!return',
                          help_message='Return who was recently unavalible')
 
@@ -41,7 +41,7 @@ class ReturnCommand(Command):
             return f"\n{team_member} is not a valid team member.\n"
 
 class SkipCommand(Command):
-    def __init__(self, api_key):
+    def __init__(self):
         super().__init__(command_keyword='!skip',
                          help_message='Skips who is up next')
 
@@ -52,7 +52,7 @@ class SkipCommand(Command):
         return f"\nSkipped {team_member}. They are now marked as unavailable.\n"
       
 class FloaterCommand(Command):
-    def __init__(self, api_key):
+    def __init__(self):
         super().__init__(command_keyword="!floaters",
                          help_message="display floaters")
 
