@@ -59,9 +59,9 @@ class FloaterCommand(Command):
     def execute(self, message, attachment_actions, activity):
         retString = [
         "## Up next:",
-        quote_warning(list(team_members.items())[0]),
+        quote_warning(team_members[0]),
         "## Rest of the team members: ",
-        quote_info(list(team_members.items())[1:])
-      ]
+        quote_info(team_members[1:])
+        ]
         
-        return Response(markdown=retString)
+        return retString
