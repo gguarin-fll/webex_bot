@@ -4,6 +4,7 @@ import time
 
 from webex_bot.formatting import quote_info, quote_warning
 from webex_bot.models.command import Command
+from webex_bot.models import Response
 
 log = logging.getLogger(__name__)
 team_members = []
@@ -56,11 +57,12 @@ class FloaterCommand(Command):
         super().__init__(command_keyword="!floaters",
                          help_message="display floaters")
 
-    def execute(self):
+    def execute(self, message, attachment_actions, activity):
         retString = [
-            "## Up next:",
-            quote_warning(list(team_members.items())[0]),
-            "## Rest of the team members: ",
-            quote_info(list(team_members.items())[1:])
-            ]
-        return retString
+        "## Up next:",
+        quote_warning(list(team_members.items())[0]),
+        "## Rest of the team members: ",
+        quote_info(list(team_members.items())[1:])
+      ]
+        
+        return Response(markdown=retString)
